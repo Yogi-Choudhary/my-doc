@@ -1,0 +1,8 @@
+===============================================================================================================================================
+                                                         what is key in ruby
+===============================================================================================================================================
+
+A Ruby hash is a collection of unique keys and their values. They are similar to arrays but array use integer as an index and hash use any object type. They are also called associative arrays, dictionaries or maps. If a hash is accessed with a key that does not exist, the method will return nil.
+
+===============================================================================================================================================
+
