@@ -6,7 +6,10 @@
 
 The has_many :through Association.
 
-A has_many :through association is often used to set up a many-to-many connection with another model. This association indicates that the declaring model can be matched with zero or more instances of another model by proceeding through a third model. For example, consider a medical practice where patients make appointments to see physicians. The relevant association declarations could look like this:
+A has_many :through association is often used to set up a many-to-many connection with another model.
+This association indicates that the declaring model can be matched with zero or more instances of another 
+model by proceeding through a third model. For example, consider a medical practice where patients make appointments 
+to see physicians. The relevant association declarations could look like this:
 
 class Student < ApplicationRecord
   has_many :subjects
@@ -95,7 +98,10 @@ s3.subjects.first.teacher
 
 ===============================================================================================================================================
 
-A has_one :through association sets up a one-to-one connection with another model. This association indicates that the declaring model can be matched with one instance of another model by proceeding through a third model. For example, if each supplier has one account, and each account is associated with one account history, then the supplier model could look like this:
+A has_one :through association sets up a one-to-one connection with another model. This association indicates that the declaring model 
+can be matched with one instance of another model by proceeding through a third model. For example,
+if each supplier has one account, and each account is associated with one account history, 
+then the supplier model could look like this:
 
 class Supplier < ApplicationRecord
   has_one :account
@@ -144,7 +150,10 @@ end
 
 ===============================================================================================================================================
 
-A has_and_belongs_to_many association creates a direct many-to-many connection with another model, with no intervening model. This association indicates that each instance of the declaring model refers to zero or more instances of another model. For example, if your application includes assemblies and parts, with each assembly having many parts and each part appearing in many assemblies, you could declare the models this way:
+A has_and_belongs_to_many association creates a direct many-to-many connection with another model, with no intervening model.
+This association indicates that each instance of the declaring model refers to zero or more instances of another model. 
+For example, if your application includes assemblies and parts, with each assembly having many parts and each part 
+appearing in many assemblies, you could declare the models this way:
 
 class Assembly < ApplicationRecord
   has_and_belongs_to_many :parts
