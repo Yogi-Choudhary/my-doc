@@ -1,0 +1,35 @@
+===============================================================================================================================================
+                                                                   git
+===============================================================================================================================================
+
+To create a git feature branch, you can use:
+
+$ git checkout -b nameofbranch
+
+To create a feature branch named create-users-table-model:
+
+$ git checkout -b create-users-table-model
+
+To view list of branches:
+
+$ git branch
+
+To move to master branch:
+
+$ git checkout master
+
+To move back to already created feature branch:
+
+$ git checkout create-users-table-model
+
+To push your master branch to your online repo:
+
+$ git push origin master
+
+If you want to discard/delete a feature branch that is no longer needed and has been merged to master branch already (not covered in video):
+
+$ git branch -d nameofbranch
+
+To delete a feature branch that is no longer needed but has NOT been merged to master (not covered in video):
+
+git branch -D nameofbranch
