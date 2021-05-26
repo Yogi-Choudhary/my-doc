@@ -1,0 +1,387 @@
+===============================================================================================================================================
+                                                             Active Record Migrations
+===============================================================================================================================================
+
+1) Migration Overview
+=====================
+  Migrations are a convenient way to alter your database schema over time in a consistent way.
+  They use a Ruby DSL so that you don't have to write SQL by hand, allowing your schema and changes to be database independent.
+
+  A primary key column called id will also be added implicitly, as it's the default primary key for all Active Record models.
+  The timestamps macro adds two columns, created_at and updated_at. These special columns are automatically 
+  managed by Active Record if they exist.
+===============================================================================================================================================
+  
+2) Creating a Migration
+=======================
+
+  Creating a Standalone Migration :-
+  ===============================
+
+  Migrations are stored as files in the db/migrate directory, one for each migration class. The name
+  of the file is of the form YYYYMMDDHHMMSS_create_products.rb, that is to say a UTC timestamp
+  identifying the migration followed by an underscore followed by the name of the migration. The name
+  of the migration class (CamelCased version) should match the latter part of the file name. For
+  example 20080906120000_create_products.rb should define class CreateProducts and
+  20080906120001_add_details_to_products.rb should define AddDetailsToProducts.
+  Rails uses this timestamp to determine which migration should be run and in what order, so if you're
+  copying a migration from another application or generate a file yourself, be aware of its position in the order.
+
+Creating a Migration
+====================
+  ------------------------------------------------
+  rails generate migration AddPartNumberToProducts
+  ------------------------------------------------
+
+---------------------------------------------------------------
+  class AddPartNumberToProducts < ActiveRecord::Migration[6.0]
+    def change
+    end
+  end
+---------------------------------------------------------------
+
+ If the migration name is of the form "AddColumnToTable" or "RemoveColumnFromTable" and is
+ followed by a list of column names and types then a migration containing the appropriate
+ add_column and remove_column statements will be created.
+ ----------     -------------
+
+ -------------------------------------------------------------------
+ rails generate migration AddPartNumberToProducts part_number:string
+ -------------------------------------------------------------------
+
+--------------------------------------------------------------
+ class AddPartNumberToProducts < ActiveRecord::Migration[6.0]
+   def change
+     add_column :products, :part_number, :string
+   end
+ end
+ --------------------------------------------------------------
+ 
+ Add a index :-
+ ==============
+
+ If you'd like to add an index on the new column, you can do that as well.
+
+---------------------------------------------------------------------------
+ rails generate migration AddPartNumberToProducts part_number:string:index
+---------------------------------------------------------------------------
+
+ will generate the appropriate add_column and add_index statements:
+                               ----------     ---------
+--------------------------------------------------------------
+ class AddPartNumberToProducts < ActiveRecord::Migration[6.0]
+   def change
+     add_column :products, :part_number, :string
+     add_index :products, :part_number
+   end
+ end 
+-----------------------------------------------------------------
+
+ Similarly, you can generate a migration to remove a column from the command line:
+                                            ---------------
+
+ ------------------------------------------------------------------------
+ rails generate migration RemovePartNumberFromProducts part_number:string
+ ------------------------------------------------------------------------
+
+--------------------------------------------------------------------
+ class RemovePartNumberFromProducts < ActiveRecord::Migration[6.0]
+   def change
+     remove_column :products, :part_number, :string
+   end
+ end
+ -------------------------------------------------------------------
+
+ You are not limited to one magically generated column. For example:
+ 
+ -------------------------------------------------------------------------------
+ rails generate migration AddDetailsToProducts part_number:string price:decimal
+ -------------------------------------------------------------------------------
+
+-----------------------------------------------------------
+ class AddDetailsToProducts < ActiveRecord::Migration[6.0]
+   def change
+     add_column :products, :part_number, :string
+     add_column :products, :price, :decimal
+   end
+ end
+ -----------------------------------------------------------
+
+ If the migration name is of the form "CreateXXX" and is followed by a list of column names and types
+ then a migration creating the table XXX with the columns listed will be generated. For example:
+
+ ======================================================================
+ rails generate migration CreateProducts name:string part_number:string
+                          --------------
+-----------------------------------------------------
+ class CreateProducts < ActiveRecord::Migration[6.0]
+   def change
+     create_table :products do |t|
+       t.string :name
+       t.string :part_number
+
+       t.timestamps
+     end
+   end
+ end 
+-----------------------------------------------------
+
+ As always, what has been generated for you is just a starting point. You can add or remove from it as
+ you see fit by editing the db/migrate/YYYYMMDDHHMMSS_add_details_to_products.rb file.
+
+ Also, the generator accepts column type as references (also available as belongs_to). For example,
+
+ --------------------------------------------------------------
+ rails generate migration AddUserRefToProducts user:references
+ --------------------------------------------------------------
+
+ generates the following add_reference call:
+ -------------------------------------------
+
+ class AddUserRefToProducts < ActiveRecord::Migration[6.0]
+   def change
+     add_reference :products, :user, foreign_key: true
+   end
+ end
+ ------------------------------------------------------------
+
+ This migration will create a user_id column and appropriate index.
+
+ There is also a generator which will produce join tables if JoinTable is part of the name:
+
+ ------------------------------------------------------------------------
+ rails generate migration CreateJoinTableCustomerProduct customer product
+ ------------------------------------------------------------------------
+
+ class CreateJoinTableCustomerProduct < ActiveRecord::Migration[6.0]
+   def change
+     create_join_table :customers, :products do |t|
+       # t.index [:customer_id, :product_id]
+       # t.index [:product_id, :customer_id]
+     end
+   end
+ end
+----------------------------------------------------------------------
+
+===============================================================================================================================================
+
+
+3) Model Generators:-
+=====================
+ 
+ --------------------------------------------------------- 
+ rails generate model Product name:string description:text  
+ ---------------------------------------------------------
+
+ will create a migration that looks like this
+
+---------------------------------------------------------
+ class CreateProducts < ActiveRecord::Migration[6.0]
+  def change
+     create_table :products do |t|
+       t.string :name
+       t.text :description
+
+       t.timestamps
+     end
+   end
+ end
+--------------------------------------------------------
+
+===============================================================================================================================================
+
+4) Passing Modifiers :-
+======================
+
+ Some commonly used type modifiers can be passed directly on the command line. They are enclosed 
+ by curly braces and follow the field type:
+ 
+ For instance, running:
+
+-----------------------------------------------------------------------------------------------------
+ rails generate migration AddDetailsToProducts 'price:decimal{5,2}' supplier:references{polymorphic}
+-----------------------------------------------------------------------------------------------------
+
+ will produce a migration that looks like this
+--------------------------------------------------------------------
+ class AddDetailsToProducts < ActiveRecord::Migration[6.0]
+   def change
+     add_column :products, :price, :decimal, precision: 5, scale: 2
+     add_reference :products, :supplier, polymorphic: true
+   end
+ end
+----------------------------------------------------------------------
+
+===============================================================================================================================================
+
+5) Creating a Join Table:-
+=========================
+
+ The migration method create_join_table creates an HABTM (has and belongs to many) join table. A typical use would be:
+
+ create_join_table :products, :categories
+ ----------------------------------------
+
+ which creates a categories_products table with two columns called category_id and
+ product_id. These columns have the option :null set to false by default. This can be
+ overridden by specifying the :column_options option:
+
+ create_join_table :products, :categories, column_options: { null: true }
+ ------------------------------------------------------------------------
+
+ By default, the name of the join table comes from the union of the first two arguments provided to
+ create_join_table, in alphabetical order. To customize the name of the table, provide a :table_name option:
+
+ create_join_table :products, :categories, table_name: :categorization
+ ---------------------------------------------------------------------
+ creates a categorization table.
+
+ create_join_table also accepts a block, which you can use to add indices (which are not created by default) or additional columns:
+
+----------------------------------------------------
+ create_join_table :products, :categories do |t|
+  t.index :product_id
+  t.index :category_id
+ end
+----------------------------------------------------
+
+===============================================================================================================================================
+
+6) Changing Tables:-
+===================
+
+ A close cousin of create_table is change_table, used for changing existing tables. It is used
+ in a similar fashion to create_table but the object yielded to the block knows more tricks. For example:
+
+-----------------------------------
+ change_table :products do |t|
+  t.remove :description, :name
+  t.string :part_number
+  t.index :part_number
+  t.rename :upccode, :upc_code
+ end
+----------------------------------
+
+removes the description and name columns, creates a part_number string column and adds an index on it. Finally it renames the upccode column.
+
+===============================================================================================================================================
+
+7) Changing Columns:-
+====================
+
+ Like the remove_column and add_column Rails provides the change_column migration method.
+
+ change_column :products, :part_number, :text
+ ---------------------------------------------
+
+ This changes the column part_number on products table to be a :text field. Note that change_column command is irreversible.
+
+ Besides change_column, the change_column_null and change_column_default methods
+ are used specifically to change a not null constraint and default values of a column.
+
+ ------------------------------------------------------------------
+ change_column_null :products, :name, false
+ change_column_default :products, :approved, from: true, to: false
+ ------------------------------------------------------------------
+
+8) Column Modifiers:-
+====================
+
+ Column modifiers can be applied when creating or changing a column:
+
+ 1) limit Sets the maximum size of the string/text/binary/integer fields.
+
+ 2) precision Defines the precision for the decimal fields, representing the total number of digits in the number.
+
+ 3) scale Defines the scale for the decimal fields, representing the number of digits after the decimal point.
+
+ 4) polymorphic Adds a type column for belongs_to associations.
+
+ 5) null Allows or disallows NULL values in the column.
+
+ 6) default Allows to set a default value on the column. Note that if you are using a dynamic
+    value (such as a date), the default will only be calculated the first time (i.e. on the date the migration is applied).
+
+ 7) comment Adds a comment for the column.
+
+===============================================================================================================================================
+
+9) Foreign Keys:-
+
+ While it's not required you might want to add foreign key constraints to guarantee referential integrity.
+
+-------------------------------------
+ add_foreign_key :articles, :authors
+-------------------------------------
+
+===============================================================================================================================================
+
+10)  Using the change Method:-
+==============================
+
+ The change method is the primary way of writing migrations. It works for the majority of cases,
+ where Active Record knows how to reverse the migration automatically. Currently, the change
+ method supports only these migration definitions:
+ 
+ 1) add_column
+    ----------
+ 2) add_foreign_key
+    ---------------
+ 3) add_index
+    ---------
+ 4) add_reference
+    -------------
+ 5) add_timestamps
+    --------------
+ 6) change_column_default (must supply a :from and :to option)
+    ---------------------
+ 7) change_column_null
+    ------------------
+ 8) create_join_table
+    -----------------
+ 9) create_table
+    ------------ 
+ 10) disable_extension
+     -----------------
+ 11) drop_join_table
+     ---------------    
+ 12) drop_table (must supply a block)
+     ---------
+ 13) enable_extension
+     ----------------
+ 14) remove_column (must supply a type)
+     -------------
+ 15) remove_foreign_key (must supply a second table)
+    -------------------
+ 16) remove_index
+     ------------
+ 17) remove_reference
+     ----------------
+ 18) remove_timestamps 
+     -----------------
+ 19) rename_column
+     -------------
+ 20) rename_index
+     ------------
+ 21) rename_table
+     ------------
+ 22) change_table is also reversible, as long as the block does not call change, change_default or remove.
+     ------------
+===============================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
