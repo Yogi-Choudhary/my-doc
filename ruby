@@ -1,13 +1,13 @@
 ===============================================================================================================================================
 
 1) What is ruby.
-
+================
 Ruby is a pure object-oriented programming language. It was created in 1993 by Yukihiro Matsumoto of Japan.
 
 ===============================================================================================================================================
 
 2) Features of Ruby.
-
+====================
 1) Object-oriented
 2) Flexibility
 3) Expressive feature
@@ -30,7 +30,7 @@ Ruby is a pure object-oriented programming language. It was created in 1993 by Y
 ===============================================================================================================================================
 
 3) Ruby - Syntax
-
+================
  Let us write a simple program in ruby. All ruby files will have extension .rb.
 
  #!/usr/bin/ruby -w
@@ -48,7 +48,7 @@ Ruby is a pure object-oriented programming language. It was created in 1993 by Y
 ===============================================================================================================================================
 
 4) Whitespace in Ruby Program.
-
+==============================
  Whitespace characters such as spaces and tabs are generally ignored in Ruby code,
  except when they appear in strings. Sometimes, however, they are used to interpret
  ambiguous statements. Interpretations of this sort produce warnings when the -w option is enabled. 
@@ -61,7 +61,7 @@ Ruby is a pure object-oriented programming language. It was created in 1993 by Y
 ===============================================================================================================================================
 
 5) Ruby Identifiers.
-
+====================
  Identifiers are names of variables, constants, and methods. Ruby identifiers are case sensitive.
  It means Ram and RAM are two different identifiers in Ruby.
 
@@ -70,7 +70,7 @@ Ruby is a pure object-oriented programming language. It was created in 1993 by Y
 ==============================================================================================================================================
 
 6) Ruby BEGIN Statement.
-
+========================
  Syntax
  
  BEGIN {
@@ -98,7 +98,7 @@ Ruby is a pure object-oriented programming language. It was created in 1993 by Y
 ===============================================================================================================================================
 
 7) Ruby END Statement.
-
+======================
  Syntax
  END {
    code
@@ -129,7 +129,7 @@ Ruby is a pure object-oriented programming language. It was created in 1993 by Y
 ===============================================================================================================================================
 
 8) What is class.
-
+=================
  Ruby is a pure Object Oriented Programming Language. An object-oriented program consists of Classes and Objects.
  An object is an entity that serves as a container for data and also controls access to the data.
 
@@ -140,7 +140,7 @@ Ruby is a pure object-oriented programming language. It was created in 1993 by Y
 ===============================================================================================================================================
 
 9) what is a objects.
-
+=====================
  Objects are instances of the class. You will now learn how to create objects of a class in Ruby. You can create objects
  in Ruby by using the method new of the class. The method new is a unique type of method, which is predefined in the Ruby library.
  The new method belongs to the class methods.
@@ -148,7 +148,7 @@ Ruby is a pure object-oriented programming language. It was created in 1993 by Y
 ===============================================================================================================================================
 
 10) what is Local Variables.
-
+============================
   Local Variables − Local variables are the variables that are defined in a method. Local variables are not
   available outside the method. You will see more details about method in subsequent chapter. Local variables
   begin with a lowercase letter or _.
@@ -158,7 +158,7 @@ Ruby is a pure object-oriented programming language. It was created in 1993 by Y
 ===============================================================================================================================================
 
 11) what is Instance Variables.
-
+===============================
   Instance Variables − Instance variables are available across methods for any particular instance or object.
   That means that instance variables change from object to object. Instance variables are preceded by the at
   sign (@) followed by the variable name.
@@ -219,7 +219,7 @@ Ruby is a pure object-oriented programming language. It was created in 1993 by Y
 ===============================================================================================================================================
 
 12) what is Class Variables.
-
+============================
   Class Variables − Class variables are available across different objects. A class variable belongs to the
   class and is a characteristic of a class. They are preceded by the sign @@ and are followed by the variable name.
 
@@ -284,7 +284,7 @@ Ruby is a pure object-oriented programming language. It was created in 1993 by Y
 ===============================================================================================================================================
 
 13) what is Global Variables.
-
+=============================
   Global Variables − Class variables are not available across classes. If you want to have a single variable,
   which is available across classes, you need to define a global variable.
   The global variables are always preceded by the dollar sign ($).
@@ -333,7 +333,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 14) what is s new keyword 
- 
+=========================
  The new keyword a work three types.
 
  loading , instances , initialize.
@@ -341,7 +341,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 15) Explain some differences between Ruby and Python.
-
+=====================================================
  Similarities:
 
    High level language
@@ -362,7 +362,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 16) What are class libraries in Ruby?
-
+=====================================
   Ruby class libraries contain variety of domain such as thread programming, data types, various domains. Following is a list of domains
   which has relevant class libraries:
 
@@ -380,7 +380,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 17) Name some operators used in Ruby.
-
+=====================================
   Operators are a symbol which is used to perform different operations.
 
   Unary operator
@@ -396,7 +396,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 18) What is RubyGems in Ruby programming language?
-
+==================================================
   RubyGems provides a standard format for distributing ruby programs and libraries.
   It works as a package manager for the Ruby programming language.
 
@@ -405,7 +405,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 19) Explain Ruby data types.
-
+============================
   There are different data types in Ruby:
 
   Numbers
@@ -423,7 +423,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 20) What is the use of load and require in Ruby?
-
+================================================
   In Ruby, load and require both are used for loading the available code into the current code.
   In cases where loading the code required every time when changed or every times someone hits the URL, it is suggested to use 'load'.
 
@@ -432,7 +432,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 21) Explain Ruby if-else statement.
-
+===================================
   The Ruby if-else statement is used to test condition. There are various types of statement in Ruby.
 
   if statement
@@ -446,14 +446,14 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 22) Explain case statement in Ruby.
-
+===================================
   In Ruby, we use 'case' instead of 'switch' and 'when' instead of 'case'.
   The case statement matches one statement with multiple conditions just like a switch statement in other languages.
 
 ===============================================================================================================================================
 
 23) Explain for loop in Ruby.
-  
+============================ 
   Ruby for loop iterates over a specific range of numbers. Hence, for loop is used if a program has fixed number of itrerations.
 
   Ruby for loop will execute once for each element in expression.
@@ -461,7 +461,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 24) Explain while loop in Ruby.
-
+===============================
   Ruby while loop is used to iterate a program several times. If the number of iterations is not fixed
 
   for a program, while loop is used.
@@ -469,58 +469,58 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 25) Explain do while loop in Ruby.
-
+==================================
   Ruby do while loop iterates a part of program several times. In this, loop will execute at least once because
   do while condition is written at the end.
 
 ===============================================================================================================================================
 
 26) Explain until loop in Ruby.
-
+===============================
   Ruby until loop runs until the given condition evaluates to true. It exits the loop when condition becomes true.
   It is opposite of the while loop.
 
 ===============================================================================================================================================
 
 27) Explain break statement in Ruby.
-
+====================================
   Ruby break statement is used to terminate a loop. It is mostly used in while loop where value is printed till the condition is true.
 
 ===============================================================================================================================================
 
 28) Explain next statement in Ruby.
-
+===================================
   Ruby next statement is used to skip loop's next iteration. Once the next statement is executed, no further iteration will be performed.
 
 ===============================================================================================================================================
 
 29) Explain retry statement in Ruby.
-
+====================================
   Ruby retry statement is used to repeat the whole loop iteration from the start.
 
 ===============================================================================================================================================
 
 30) Explain Ruby object.
-
+========================
   Object is the default root of all Ruby objects. Ruby objects inherit from BasicObject which allows creating alternate object hierarchies.
 
 ===============================================================================================================================================
 
 31) Define Ruby methods.
-  
+========================
   Ruby method prevent us from writing the same code in a program again and again. Ruby methods are similar to functions in other languages.
 
 ===============================================================================================================================================
 
 32) What are Ruby blocks.
-
+=========================
   Ruby code blocks are called closures in other programming languages. It consist of a group of codes which is always
   enclosed with braces or written between do...end.
 
 ===============================================================================================================================================
 
 33) In how many ways a block is written in Ruby.
-
+================================================
   A block is written in two ways:
 
   Multi-line between do and end
@@ -532,13 +532,13 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 34) What is yield statement in Ruby.
-
+====================================
   The yield statement is used to call a block within a method with a value.
 
 ===============================================================================================================================================
 
 35) Explain ampersand parameter (&block) in Ruby.
-
+=================================================
   The &block is a way to pass a reference (instead of a local variable) to the block to a method.
 
   Here, block word after the & is just a name for the reference, any other name can be used instead of this.
@@ -546,7 +546,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 36) Explain module mixins in Ruby.
-
+==================================
   Ruby doesn't support multiple inheritance. Modules eliminate the need of multiple inheritance using mixin in Ruby.
 
   A module doesn't have instances because it is not a class. However, a module can be included within a class.
@@ -556,7 +556,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 37) What are Ruby arrays and how they can be created?
-
+=====================================================
   Ruby arrays are ordered collections of objects. They can hold objects like integer, number, hash, string, symbol or any other array.
 
   Its indexing starts with 0. The negative index starts with -1 from the end of the array. For example,
@@ -571,7 +571,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 38) How to access Ruby array elements? How many methods are used to access Ruby elements.?
-
+===========================================================================================
   Ruby array elements can be accessed using #[] method. You can pass one or more than one arguments or even a range of arguments.
 
   Syntax:
@@ -595,7 +595,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 39) In how many ways items can be added in an array in Ruby?
-
+============================================================
   Ruby array elements can be added in different ways.
 
   push or <<
@@ -607,7 +607,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 40) In how many ways items can be removed from array in Ruby?
-
+=============================================================
   Ruby array elements can be removed in different ways.
 
   pop
@@ -621,7 +621,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 41) Explain Ruby hashes.
-
+========================
   A Ruby hash is a collection of unique keys and their values. They are similar to arrays but array use integer
   as an index and hash use any object type. They are also called associative arrays, dictionaries or maps.
 
@@ -630,7 +630,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 42) How to create a new time instance in Ruby?
-
+==============================================
   A new Time instance can be created with ::new. This will use your current system's time.
   Parts of time like year, month, day, hour, minute, etc can also be passed.
 
@@ -640,7 +640,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 43) Explain Ruby ranges. What are the ways to define ranges?
-
+============================================================
   Ruby range represents a set of values with a beginning and an end. They can be constructed
   using s..e and s...e literals or with ::new.
 
@@ -656,7 +656,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 44) What are Ruby iterators?
-
+============================
   Iterators are nothing but methods supported by collections. Objects that store a group of data members
   are called collections. In Ruby, arrays and hashes can be termed collections.
 
@@ -668,7 +668,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 45) How many iterators are there in Ruby?*
-
+==========================================
   Following iterators are there in Ruby:
 
   each iterator
@@ -684,7 +684,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 46) Name different methods for IO console in Ruby?*
-
+===================================================
   The IO console provides different methods to interact with console. The class IO provides following basic methods:
 
   IO::console
@@ -699,7 +699,7 @@ Global variable in Class2 is 10
 
 ===============================================================================================================================================
  47) How to open a file in Ruby?
-
+=================================
    A Ruby file can be created using different methods for reading, writing or both.
 
    There are two methods to open a file in Ruby.
@@ -719,7 +719,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 48) How to read a file in Ruby?
-
+===============================
   There are three different methods to read a file.
 
   To return a single line, following syntax is used.
@@ -746,13 +746,13 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 49) What is sysread method in Ruby?
-  
+=================================== 
   The sysread method is also used to read the content of a file. With the help of this method you can open a file in any mode.
 
 ===============================================================================================================================================
 
 50) How will you rename and delete a file in Ruby?
-
+==================================================
   Ruby files are renamed using rename method and deleted using delete mehtod.
 
   To rename a file, following syntax is used.
@@ -769,7 +769,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 51) How to check whether a directory exist or not in Ruby?
-
+==========================================================
   To check whether a directory exists or not exists? Method is used.
 
   Syntax:
@@ -779,7 +779,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 52) Explain Ruby exceptions.
-
+============================
   Ruby exception is an object, an instance of the class Exception or descendent of that class.
   When something goes wrong, Ruby program throws an exceptional behavior.
   By default Ruby program terminates on throwing an exception.
@@ -787,7 +787,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 53) What are some built-in Ruby class exceptions.
-
+=================================================
   Built-in subclasses of exception are as follows:
 
   NoMemoryError
@@ -801,14 +801,14 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 54) How an exception is handled in Ruby?
-
+========================================
   To handle exception, the code that raises exception is enclosed within begin-end block.
   Using rescue clauses we can state type of exceptions we want to handle.
 
 ===============================================================================================================================================
 
 55) Explain the use of retry statement in Ruby?
-
+===============================================
   Usaually in a rescue clause, the exception is captured and code resumes after begin block.
   Using retry statement, the rescue block code can be resumed from begin after capturing an exception.
 
@@ -823,7 +823,7 @@ Global variable in Class2 is 10
 
 ===============================================================================================================================================
 56) Explain raise statement in Ruby?
-
+====================================
   The raise statement is used to raise an exception.
 
   Syntax:
@@ -845,7 +845,7 @@ Global variable in Class2 is 10
 ===============================================================================================================================================
 
 57) Explain the use of ensure statement in Ruby?
-
+================================================
   There is an ensure clause which guarantees some processing at the end of code. The ensure block always
   run whether an exception is raised or not. It is placed after last rescue clause and will always executed as the block terminates.
 
@@ -864,4 +864,227 @@ Global variable in Class2 is 10
 
 ===============================================================================================================================================
 
+58) What are some advantages of using Ruby?
+===========================================
+  You want a programmer who can really play to the strengths of the Ruby programming language.
 
+  Pure Object-Oriented Language: Everything in Ruby is an object—even methods, classes, and booleans.
+  This greatly simplifies things from the coder’s perspective and opens up a range of possibilities.
+
+  Open-Source: Ruby is 100% free and open-source, with a large and enthusiastic community that can be tapped into as a resource.
+
+  Metaprogramming: Ruby is widely considered to be one of the best programming languages out there for metaprogramming,
+  or the ability to write code that can act on other code instead of data.
+
+  Clean and Simple Syntax: The syntax is simple and concise, which allows developers to solve
+  complex programs with fewer lines of code. It also helps that the code is human readable, and easy to follow.
+
+===============================================================================================================================================
+
+59) How would you freeze an object in Ruby? Can you provide a simple example?
+=============================================================================
+  Sometimes it can be useful to prevent an object from being changed. This can be accomplished using
+  the freeze method (Object.freeze) as in the sample code below. 
+
+  water.freeze
+
+  if( water.frozen? )
+  
+    puts "Water object is a frozen object"
+  
+  else
+  
+   puts "Water object is a normal object"
+
+ end
+
+===============================================================================================================================================
+
+60) Name the three levels of access control for Ruby methods.
+ ============================================================
+  In Ruby, methods may either be public, protected, or private. Public methods can be called by anyone.
+  Protected methods are only accessible within their defining class and its subclasses.
+  Private methods can only be accessed and viewed within their defining class.
+
+===============================================================================================================================================
+
+61) Can you explain the role of thread pooling in relation to the thread lifecycle in Ruby?
+===========================================================================================
+  In Ruby, the lifecycle of a single thread starts automatically as soon as CPU resources are available.
+  The thread runs the code in the block where it was instantiated and obtains the value of the last 
+  expression in that block and returns it upon completion. Threads use up resources, but running multiple
+  threads at a time can improve an app’s performance. Thread pooling is a technique wherein multiple pre-instantiated
+  reusable threads are left on standby, ready to perform work when needed. Thread pooling is best used when there are
+  a large number of short tasks that must be performed. This avoids the overhead of having to create a new thread
+  every time a small task is about to be performed.
+
+===============================================================================================================================================
+
+62) Can you explain how Ruby looks up a method to invoke?
+=========================================================
+  Since Ruby is a pure object-oriented language, it’s important to make sure your developer thoroughly
+  understands how objects work. The first place that Ruby looks for a method is in the object’s metaclass
+  or eigenclass—the class that contains methods directly defined on the object. If the method cannot be
+  found in an object’s metaclass, Ruby will then search for the method in the ancestors of an object’s class.
+  The list of ancestors for any class starts with the class of the object itself, and climbs parent classes
+  until it reaches the Object, Kernel, and BasicObject classes at the top of the Ruby class hierarchy.
+  If Ruby cannot find the method, it will internally send another method aptly called “method_missing?” to the object class.
+  Ruby will repeat another search for this method, and will at least find it in the object class,
+  provided the programmer did not see fit to define the “method_missing?” class earlier in the ancestry of the object.
+
+===============================================================================================================================================
+
+63) Find and fix the bug within the code below.
+===============================================
+  class Home
+  attr_reader :address
+
+  def initialize(a)
+    address = a
+  end
+
+  def call
+    # perform a process that requires @address
+  end
+
+  private
+
+  def address=(a)
+    @address = clean(a)
+  end
+
+  def clean(a)
+    # return sanitized address
+  end
+ end
+ 
+  Normally if Ruby encounters an identifier, and the identifier does not reference a defined local variable,
+  Ruby will try to call a method with the given name. However, when Ruby encounters address = a within the initialize method,
+  it treats address = a as a local variable initialization and fails to invoke the setter.
+  This occurs when Ruby encounters an identifier beginning with a lowercase character or underscore on the
+  left-hand side of an assignment operator. The solution is to clarify that we want to call the writer method
+  address = by prepending address with the self keyword. The initialize method has been reproduced below: 
+
+ def initialize(a)
+   self.address = a
+ end
+   Alternatively, you could also fix the bug by directly assigning the
+   value to the instance variable within the initialize method like so: 
+ def initialize(a)
+   @address = clean(a)
+ end
+
+===============================================================================================================================================
+
+64) Explain the role of modules and mixins in Ruby.
+==================================================
+  Modules are Ruby’s way of grouping methods, classes, and constants together to provide a namespace for preventing name clashes.
+  The second purpose of modules is to use them as mixins. Technically, Ruby only supports single inheritance,
+  but by using modules as mixins, it is possible to share code among different classes—a key advantage of multiple
+  inheritance—without having to give up the simplicity of the single inheritance paradigm.
+
+===============================================================================================================================================
+
+65) What are blocks and procs?
+==============================
+  A block is basically Ruby’s version of a closure—a block of code that can be wrapped up into a
+  proc (a type of function) that can then be stored in a variable or passed to a method and run when desired.
+  Blocks can syntactically be written as blocks of code between { } or the do and end keywords.
+  The standard way to create a proc is depicted in the code block below. 
+
+  > my_proc = Proc.new { |arg1| print "#{arg1}! " }
+
+===============================================================================================================================================
+
+66) Predict the output of the code below. Explain your answer.
+==============================================================
+  -> (s) {p s} [“I’m a Proc”]
+ This question highlights the syntactical elegance of Ruby. A seasoned coder can perform a lot
+ with a single line of Ruby code. The -> operator, or “stabby proc” as it is often called,
+ is a way to create a proc that is also a lambda, or nameless function. This proc takes the
+ parameter s and executes the block {p s}, which is shorthand for puts(s.inspect) before passing
+ the string “I’m a Proc” using the square bracket syntax in place of the typical “call” method.
+ The result is an elegant single line of code that prints the string “I’m a Proc” to the console.
+
+===============================================================================================================================================
+
+67) Explain what is “Yield” in Ruby on Rails?
+=============================================
+  A Ruby method that receives a code block invokes it by calling it with the “Yield”.
+
+===============================================================================================================================================
+
+68) Explain what is ORM (Object-Relationship-Model) in Rails?
+=============================================================
+  ORM or Object Relationship Model in Rails indicate that your classes are mapped to the table in the database,
+  and objects are directly mapped to the rows in the table.
+
+===============================================================================================================================================
+
+69) Mention what the difference is between false and nil in Ruby?
+=================================================================
+  In Ruby False indicates a Boolean datatype, while Nil is not a data type, it have an object_id 4.
+
+===============================================================================================================================================
+
+70) Explain what is the role of sub-directory app/controllers and app/helpers?
+==============================================================================
+  App/controllers: A web request from the user is handled by the Controller. The controller
+  sub-directory is where Rails looks to find controller classes
+
+  App/helpers: The helper’s sub-directory holds any helper classes used to assist the view,
+  model and controller classes.
+ 
+==============================================================================================================================================
+
+71) what is the difference between String and Symbol?
+=====================================================
+  They both act in the same way only they differ in their behaviors which are opposite to each other.
+  The difference lies in the object_id, memory and process tune when they are used together.
+  Symbol belongs to the category of immutable objects whereas Strings are considered as mutable objects.
+
+===============================================================================================================================================
+
+72) Explain how Symbol is different from variables?
+===================================================
+  Symbol is different from variables in following aspects
+
+  It is more like a string than variable
+
+  In Ruby string is mutable but a Symbol is immutable
+
+  Only one copy of the symbol requires to be created
+ 
+  Symbols are often used as the corresponding to enums in Ruby
+
+===============================================================================================================================================
+
+73) Explain what is Rails Active Record in Ruby on Rails?
+=========================================================
+  Rails active record is the Object/Relational Mapping (ORM) layer supplied with Rails. It follows the standard ORM model as
+
+  Table map to classes
+
+  Rows map to objects
+  
+  Columns map to object attributes
+
+===============================================================================================================================================
+
+74) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
